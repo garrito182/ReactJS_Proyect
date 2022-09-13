@@ -850,3 +850,8 @@ video {
     padding-right: 3rem;
   }
 }
+
+.py-12 {
+  color: #fff;
+  background-color: #111827;
+}

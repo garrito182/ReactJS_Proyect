@@ -1,4 +1,19 @@
-function Contact() {
+const Contact = () => {
+
+    const preventHandle = (event) => {
+        if (event.keyCode == 32, 65, 69, 73, 79, 85) {
+            event.preventDefault()
+        }
+    }
+
+    const addEmail = (mail) => {
+        if (mail.length === "") {
+            alert("Por favor, ingrese su e-mail.")
+        } else {
+            alert("Su e-mail se ha registrado con exito!")
+        }
+    }
+
     return (
         <>
             <div class="2xl:mx-auto 2xl:container mx-4 py-16">
@@ -13,8 +28,8 @@ function Contact() {
                             una semana todos los viernes, así que suscríbase para recibir las últimas noticias y actualizaciones.
                         </p>
                         <div class="sm:border border-white flex-col sm:flex-row flex items-center lg:w-5/12 w-full mt-12 space-y-4 sm:space-y-0">
-                            <input class="border border-white sm:border-transparent text-base w-full font-medium leading-none text-white p-4 focus:outline-none bg-transparent placeholder-white" placeholder="E-mail" />
-                            <button class="focus:outline-none focus:ring-offset-2 focus:ring border border-white sm:border-transparent w-full sm:w-auto bg-white py-4 px-6 hover:bg-opacity-75">Suscribirse</button>
+                            <input onKeyDown={preventHandle} type="email" class="border border-white sm:border-transparent text-base w-full font-medium leading-none text-white p-4 focus:outline-none bg-transparent placeholder-white" placeholder="E-mail" />
+                            <button onClick={addEmail} class="focus:outline-none focus:ring-offset-2 focus:ring border border-white sm:border-transparent w-full sm:w-auto bg-white py-4 px-6 hover:bg-opacity-75">Suscribirse</button>
                         </div>
                     </div>
                 </div>

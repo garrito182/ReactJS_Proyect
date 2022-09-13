@@ -1,9 +1,12 @@
+import { useState } from "react";
 import "../css/style.css";
 import { ItemCount } from "./ItemCount";
 import Loader from "./Loader";
+import { Link } from "react-router-dom"; 
 
 const ItemDetail = ({ item }) => {
 
+    const { itemCount, setItemCount } = useState()
     const onAdd = (count) => {
         if (count >= 1) {
             alert("Se agregaron " + count + " productos al carrito!");
@@ -14,12 +17,11 @@ const ItemDetail = ({ item }) => {
 
     return (
         <>
-            
             {item && item.picture ?
                 <div className="card mb-3" width="256px">
                     <div className="row g-0">
                         <div className="col-md-6">
-                            <img src={item.picture} className="img-fluid rounded-start"/>
+                            <img src={item.picture} className="img-fluid rounded-start" />
                         </div>
                         <div className="col-md-6">
                             <div className="wsk-cp-text-detail">
@@ -35,7 +37,11 @@ const ItemDetail = ({ item }) => {
                                 <div className="title-product">
                                     <span className="price">${item.price}</span>
                                 </div>
-                                <ItemCount start={0} stock={5} onAdd={onAdd} />
+                                {
+                                    itemCount === 0
+                                        ? <ItemCount start={itemCount} stock={5} onAdd={onAdd} />
+                                        : <Link to={`/cart`}><div className="span-cart"><a href="#"></a></div></Link>
+                                }
                             </div>
                         </div>
                     </div>

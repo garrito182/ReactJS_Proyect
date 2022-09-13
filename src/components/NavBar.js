@@ -13,8 +13,9 @@ function NavBar() {
                                 <img class="h-9" src="./enduro-logo.png"></img>
                             </a></Link>
                             <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                                <Link to="/"><li><a class="hover:text-gray-200" >Inicio</a></li></Link>
-                                <Link to="/category"><li><a class="hover:text-gray-200" >Productos</a></li></Link>
+                                <Link to="/"><li><a class="hover:text-gray-200" >Bicicletas</a></li></Link>
+                                <Link to="/category/1"><li><a class="hover:text-gray-200" >Specialized</a></li></Link>
+                                <Link to="/category/2"><li><a class="hover:text-gray-200" >Canyon</a></li></Link>
                                 <Link to="/contact"><li><a class="hover:text-gray-200" >Contacto</a></li></Link>
                             </ul>
                             <div class="hidden xl:flex items-center space-x-5 items-center">

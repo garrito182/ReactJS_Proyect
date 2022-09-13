@@ -1,11 +1,11 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
-import Home from './pages/Home';
 import ItemListContainer from './containers/ItemListContainer.js';
 import ItemDetailContainer from './containers/ItemDetailContainer';
 import NavBar from './components/NavBar';
 import Contact from './pages/Contact';
+import Cart from './components/Cart';
 
 function App() {
   return (
@@ -15,10 +15,11 @@ function App() {
         <div class="container">
           <div class="row">
             <Routes>
-              <Route path="/" element={< Home />} />
-              <Route path="/category" element={<ItemListContainer />} />
+              <Route path="/" element={<ItemListContainer />} />
+              <Route path="/category/:idCategory" element={<ItemListContainer />} />
               <Route path="/item/:idItem" element={<ItemDetailContainer />} />
-              <Route path="/contact" element={< Contact />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/cart" element={<Cart />} />
             </Routes>
           </div>
         </div>

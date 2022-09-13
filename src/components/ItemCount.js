@@ -21,18 +21,16 @@ export const ItemCount = ({ start, stock, onAdd }) => {
     }
 
     return (
-        <div className="card-footer">
-            <div className="title-product">
-                <div className="counter btn-group btn-group-sm" role="group" aria-label="Basic example">
-                    <button type="button" className="btn btn-light" data-mdb-color="dark" onClick={addProduct}>
-                        <i className="fas fa-solid fa-plus"></i></button>
-                    <a type="button" className="btn btn-light" data-mdb-color="dark">{amount}</a>
-                    <button type="button" className="btn btn-light" data-mdb-color="dark" onClick={removeProduct}>
-                        <i className="fas fa-solid fa-minus"></i></button>
-                </div>
+        <>
+            <div className="counter btn-group btn-group-sm" role="group" aria-label="Basic example">
+                <button type="button" className="btn btn-light" data-mdb-color="dark" onClick={addProduct}>
+                    <i className="fas fa-solid fa-plus"></i></button>
+                <a type="button" className="btn btn-light" data-mdb-color="dark">{amount}</a>
+                <button type="button" className="btn btn-light" data-mdb-color="dark" onClick={removeProduct}>
+                    <i className="fas fa-solid fa-minus"></i>
+                </button>
             </div>
-            <br></br>
-            <div className="title-product">
+            <div className="counter-cart btn-group btn-group-sm" role="group" aria-label="Basic example">
                 <button onClick={() => onAdd(amount)}>
                     <a href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -41,6 +39,6 @@ export const ItemCount = ({ start, stock, onAdd }) => {
                     </a>
                 </button>
             </div>
-        </div>
+        </>
     )
 }

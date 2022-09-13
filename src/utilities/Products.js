@@ -2,6 +2,7 @@ const products = [
     {
         id: 1,
         idItem: 1,
+        categoryId: 1,
         brand: "Specialized",
         model: "Demo Race",
         price: 7100,
@@ -11,6 +12,7 @@ const products = [
     {
         id: 2,
         idItem: 2,
+        categoryId: 1,
         brand: "Specialized",
         model: "Status 160",
         price: 3000,
@@ -20,6 +22,7 @@ const products = [
     {
         id: 3,
         idItem: 3,
+        categoryId: 1,
         brand: "Specialized",
         model: "Stumpjumper Comp",
         price: 5000,
@@ -29,6 +32,7 @@ const products = [
     {
         id: 4,
         idItem: 4,
+        categoryId: 1,
         brand: "Specialized",
         model: "Enduro LTD",
         price: 6600,
@@ -38,6 +42,7 @@ const products = [
     {
         id: 5,
         idItem: 5,
+        categoryId: 2,
         brand: "Canyon",
         model: "Strive CRF",
         price: 6200,
@@ -47,6 +52,7 @@ const products = [
     {
         id: 6,
         idItem: 6,
+        categoryId: 2,
         brand: "Canyon",
         model: "Sender CFR 29 TLD",
         price: 4400,
@@ -56,6 +62,7 @@ const products = [
     {
         id: 7,
         idItem: 7,
+        categoryId: 2,
         brand: "Canyon",
         model: "Torque 29 CF 7",
         price: 4400,
@@ -65,6 +72,7 @@ const products = [
     {
         id: 8,
         idItem: 8,
+        categoryId: 2,
         brand: "Canyon",
         model: "Spectral 29 CF 8",
         price: 4500,
