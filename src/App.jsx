@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
-import ItemListContainer from './containers/ItemListContainer.js';
+import ItemListContainer from './containers/ItemListContainer.jsx';
 import ItemDetailContainer from './containers/ItemDetailContainer';
 import NavBar from './components/NavBar';
 import Contact from './pages/Contact';

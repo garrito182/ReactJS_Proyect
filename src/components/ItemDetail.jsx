@@ -6,10 +6,11 @@ import { Link } from "react-router-dom";
 
 const ItemDetail = ({ item }) => {
 
-    const { itemCount, setItemCount } = useState()
+    const [ itemCount, setItemCount ] = useState(0)
     const onAdd = (count) => {
         if (count >= 1) {
             alert("Se agregaron " + count + " productos al carrito!");
+            setItemCount(count)
         } else {
             alert("No se agregaron productos al carrito!");
         }
