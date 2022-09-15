@@ -1,6 +1,12 @@
 import "../App.css";
+import { useContext } from "react";
+import { CartContext } from "./CartContext";
+import ButtonDelAll from "./ButtonDelAll";
+import ButtonDelItem from "./ButtonDeItem";
 
 function Cart() {
+
+    const itemShow = useContext(CartContext)
     return (
         <>
             <section>
@@ -11,45 +17,54 @@ function Cart() {
                             <div class="max-w-lg px-4 mx-auto lg:px-8">
                                 <div class="flex items-center">
                                     <h1 class="ml-4 font-medium">Enduro Bikes</h1>
+                                    {
+                                        (itemShow.cartList.length > 0)
+                                            ? <ButtonDelAll onClick={itemShow.removeItem}></ButtonDelAll>
+                                            : <p class="mt-1 text-sm text-gray-500">&nbsp;Su carrito esta vacio.</p>
+                                    }
                                 </div>
                                 <div class="mt-8">
                                     <p class="text-2xl font-medium tracking-tight">$0.00</p>
                                     <p class="mt-1 text-sm text-gray-500">Detalle</p>
                                 </div>
-                                <div class="mt-12">
-                                    <div class="flow-root">
-                                        <ul class="-my-4 divide-y divide-gray-200">
-                                            <li class="flex items-center justify-between py-4">
-                                                <div class="flex items-start">
-                                                    <img
-                                                        class="flex-shrink-0 object-cover w-16 h-16 rounded-lg"
-                                                        src=""
-                                                        alt=""
-                                                    />
-                                                    <div class="ml-4">
-                                                        <p class="text-sm"></p>
-                                                        <dl class="mt-1 text-xs text-gray-500 space-y-1">
-                                                            <div>
-                                                                <dt class="inline">Marca:</dt>
-                                                                <dd class="inline"></dd>
-                                                            </div>
-                                                            <div>
-                                                                <dt class="inline">Modelo:</dt>
-                                                                <dd class="inline"></dd>
-                                                            </div>
-                                                        </dl>
+                                {itemShow.cartList.map(item =>
+                                    <div class="mt-12">
+                                        <div class="flow-root">
+                                            <ul class="-my-4 divide-y divide-gray-200">
+                                                <li class="flex items-center justify-between py-4">
+                                                    <div class="flex items-start">
+                                                        <img
+                                                            class="flex-shrink-0 object-cover w-16 h-16 rounded-lg"
+                                                            src={item.picture}
+                                                            alt=""
+                                                        />
+                                                        <div class="ml-4">
+                                                            <p class="text-sm"></p>
+                                                            <dl class="mt-1 text-xs text-gray-500 space-y-1">
+                                                                <div>
+                                                                    <dt class="inline">Marca:</dt>
+                                                                    <dd class="inline"> {item.brand}</dd>
+                                                                </div>
+                                                                <div>
+                                                                    <dt class="inline">Modelo:</dt>
+                                                                    <dd class="inline"> {item.model}</dd>
+                                                                </div>
+                                                                <div>
+                                                                    <dt class="inline">Cantidad:</dt>
+                                                                    <dd class="inline"> </dd>
+                                                                </div>
+                                                            </dl>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div>
-                                                    <p class="text-sm">
-                                                        $0.00
-                                                        <small class="text-gray-500">x0</small>
-                                                    </p>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                                    <div>
+                                                    <ButtonDelItem onClick={() => itemShow.removeItem(item.idItem)}></ButtonDelItem>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
+                                )
+                                }
                             </div>
                         </div>
                         <div class="py-12 bg-white md:py-24">
@@ -101,7 +116,7 @@ function Cart() {
                                         </legend>
                                         <div class="bg-white rounded-lg -space-y-px shadow-sm">
                                             <div>
-                                                <label class="sr-only" for="card-number">Card Number</label>
+                                                <label class="sr-only" for="card-number">Nº de Tarjeta</label>
                                                 <input
                                                     class="border-gray-200 rounded-t-lg w-full focus:z-10 text-sm p-2.5 placeholder-gray-400"
                                                     type="text"
@@ -142,12 +157,6 @@ function Cart() {
                                         </legend>
                                         <div class="bg-white rounded-lg -space-y-px shadow-sm">
                                             <div>
-                                                <label class="sr-only" for="country">Country</label>
-                                            </div>
-                                            <div>
-                                                <label class="sr-only" for="postal-code">
-                                                    ZIP/Post Code
-                                                </label>
                                                 <input
                                                     class="border-gray-200 rounded-b-lg w-full focus:z-10 text-sm p-2.5 placeholder-gray-400"
                                                     type="text"
@@ -174,7 +183,7 @@ function Cart() {
                 </div>
             </section>
         </>
-    )
+    );
 }
 
 export default Cart;

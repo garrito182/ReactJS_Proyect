@@ -1,4 +1,4 @@
-<em> # ReactJS Proyect - Enduro Bikes </em>
+> # ReactJS Proyect - Enduro Bikes
 
 > ## Descripción del proyecto: Proyecto-de-E-Commerce
 

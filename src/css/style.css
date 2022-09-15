@@ -466,6 +466,100 @@ a.buy-btn:focus {
     transform: translateZ(-25px) rotateX(-90deg);
 }
 
+.span-delete {
+    position: relative;
+    display: inline-flex;
+    width: 0px;
+    height: 55px;
+    margin: 6px 85px 10px 0px;
+    perspective: 1000px;
+}
+
+.span-delete a {
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.span-delete a:before,
+.span-delete a:after {
+    position: absolute;
+    content: "Eliminar";
+    height: 55px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(246, 104, 104);
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.span-delete a:before {
+    color: #fff;
+    transform: rotateY(0deg) translateZ(25px);
+}
+
+.span-delete a:after {
+    color: #fff;
+    transform: rotateX(90deg) translateZ(25px);
+}
+
+.span-delete a:hover {
+    transform: translateZ(-25px) rotateX(-90deg);
+}
+
+.span-delete-all {
+    position: relative;
+    display: inline-flex;
+    width: 0px;
+    height: 55px;
+    margin: 5px 124px 10px 150px;
+    perspective: 1000px;
+}
+
+.span-delete-all a {
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.span-delete-all a:before,
+.span-delete-all a:after {
+    position: absolute;
+    content: "Eliminar todos los productos";
+    height: 50px;
+    width: 225px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(246, 104, 104);
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.span-delete-all a:before {
+    color: #fff;
+    transform: rotateY(0deg) translateZ(25px);
+}
+
+.span-delete-all a:after {
+    color: #fff;
+    transform: rotateX(90deg) translateZ(25px);
+}
+
+.span-delete-all a:hover {
+    transform: translateZ(-25px) rotateX(-90deg);
+}
+
 /* Reset */
 * {
     margin: 0;
@@ -474,71 +568,6 @@ a.buy-btn:focus {
 
 body {
     min-width: 900px;
-}
-
-/* Slider */
-#slider {
-    width: 100%;
-    height: 500px;
-    position: relative;
-    overflow: hidden;
-}
-
-@keyframes load {
-    from {
-        left: -100%;
-    }
-
-    to {
-        left: 0;
-    }
-}
-
-.slides {
-    width: 400%;
-    height: 100%;
-    position: relative;
-    -webkit-animation: slide 30s infinite;
-    -moz-animation: slide 30s infinite;
-    animation: slide 30s infinite;
-}
-
-.slider {
-    width: 25%;
-    height: 100%;
-    float: left;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-}
-
-.image {
-    width: 100%;
-    height: 100%;
-}
-
-.image img {
-    width: 100%;
-    height: auto;
-}
-
-/* Legend */
-.legend {
-    border: 500px solid transparent;
-    border-left: 800px solid rgba(52, 73, 94, .7);
-    border-bottom: 0;
-    position: absolute;
-    bottom: 0;
 }
 
 /* Contents */

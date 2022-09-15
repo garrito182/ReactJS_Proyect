@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "../css/style.css";
 import { ItemCount } from "./ItemCount";
 import Loader from "./Loader";
 import { Link } from "react-router-dom"; 
+import { CartContext } from "./CartContext";
 
 const ItemDetail = ({ item }) => {
 
-    const [ itemCount, setItemCount ] = useState(0)
+    const [ itemCount, setItemCount ] = useState(0);
+    const {addItem} = useContext(CartContext);
+
     const onAdd = (count) => {
         if (count >= 1) {
             alert("Se agregaron " + count + " productos al carrito!");
@@ -14,6 +17,7 @@ const ItemDetail = ({ item }) => {
         } else {
             alert("No se agregaron productos al carrito!");
         }
+        addItem(item);
     }
 
     return (
