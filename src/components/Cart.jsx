@@ -48,8 +48,12 @@ function Cart() {
                                                                     <dd class="inline"> {item.modelItem}</dd>
                                                                 </div>
                                                                 <div>
-                                                                    <dt class="inline">Precio:</dt>
+                                                                    <dt class="inline">Precio por Unidad:</dt>
                                                                     <dd class="inline"> ${item.priceItem}</dd>
+                                                                </div>
+                                                                <div>
+                                                                    <dt class="inline">Precio Total:</dt>
+                                                                    <dd class="inline"> ${item.priceItem * item.countItem}</dd>
                                                                 </div>
                                                                 <div>
                                                                     <dt class="inline">Cantidad:</dt>

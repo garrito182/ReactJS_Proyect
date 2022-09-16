@@ -17,7 +17,7 @@ const ItemDetail = ({ item }) => {
         } else {
             alert("No se agregaron productos al carrito!");
         }
-        addItem(item);
+        addItem(item, count);
     }
 
     return (
