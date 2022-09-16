@@ -4,14 +4,27 @@ import { createContext } from "react";
 export const CartContext = createContext()
 
 const CartContextProvider = ({ children }) => {
-    const [cartList, setCartList] = useState([])
 
-        const addItem = (product) => {
+    const [cartList, setCartList] = useState([])
+    
+    const addItem = (item, count) => {
+        let quantity = cartList.find(product => product.idItem === item.id);
+        if ( quantity === undefined) {
             setCartList([
                 ...cartList,
-                product
-            ])
+                {
+                    idItem: item.id,
+                    picItem: item.picture,
+                    brandItem: item.brand,
+                    modelItem: item.model,
+                    priceItem: item.price,
+                    countItem: count,
+                }
+            ]);
+        } else {
+            quantity.countItem += count;
         }
+    }
 
         const clearAll = () => {
             setCartList([])

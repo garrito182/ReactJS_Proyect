@@ -1,8 +1,6 @@
 import "../App.css";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
-import ButtonDelAll from "./ButtonDelAll";
-import ButtonDelItem from "./ButtonDeItem";
 
 function Cart() {
 
@@ -19,8 +17,8 @@ function Cart() {
                                     <h1 class="ml-4 font-medium">Enduro Bikes</h1>
                                     {
                                         (itemShow.cartList.length > 0)
-                                            ? <ButtonDelAll onClick={itemShow.removeItem}></ButtonDelAll>
-                                            : <p class="mt-1 text-sm text-gray-500">&nbsp;Su carrito esta vacio.</p>
+                                            ? <button type="button" class="btn btn-danger" onClick={itemShow.clearAll}>Eliminar todos los productos</button>
+                                            : <p class="mt-1 text-sm text-gray-500">&nbsp;&nbsp;Su carrito esta vacio.</p>
                                     }
                                 </div>
                                 <div class="mt-8">
@@ -28,14 +26,14 @@ function Cart() {
                                     <p class="mt-1 text-sm text-gray-500">Detalle</p>
                                 </div>
                                 {itemShow.cartList.map(item =>
-                                    <div class="mt-12">
+                                    <div class="mt-12" src={item.idItem}>
                                         <div class="flow-root">
                                             <ul class="-my-4 divide-y divide-gray-200">
                                                 <li class="flex items-center justify-between py-4">
                                                     <div class="flex items-start">
                                                         <img
                                                             class="flex-shrink-0 object-cover w-16 h-16 rounded-lg"
-                                                            src={item.picture}
+                                                            src={item.picItem}
                                                             alt=""
                                                         />
                                                         <div class="ml-4">
@@ -43,21 +41,25 @@ function Cart() {
                                                             <dl class="mt-1 text-xs text-gray-500 space-y-1">
                                                                 <div>
                                                                     <dt class="inline">Marca:</dt>
-                                                                    <dd class="inline"> {item.brand}</dd>
+                                                                    <dd class="inline"> {item.brandItem}</dd>
                                                                 </div>
                                                                 <div>
                                                                     <dt class="inline">Modelo:</dt>
-                                                                    <dd class="inline"> {item.model}</dd>
+                                                                    <dd class="inline"> {item.modelItem}</dd>
+                                                                </div>
+                                                                <div>
+                                                                    <dt class="inline">Precio:</dt>
+                                                                    <dd class="inline"> ${item.priceItem}</dd>
                                                                 </div>
                                                                 <div>
                                                                     <dt class="inline">Cantidad:</dt>
-                                                                    <dd class="inline"> </dd>
+                                                                    <dd class="inline"> {item.countItem}</dd>
                                                                 </div>
                                                             </dl>
                                                         </div>
                                                     </div>
                                                     <div>
-                                                    <ButtonDelItem onClick={() => itemShow.removeItem(item.idItem)}></ButtonDelItem>
+                                                    <button type="button" class="btn btn-danger" onClick={() => itemShow.removeItem(item.idItem)}>Eliminar</button>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -122,7 +124,7 @@ function Cart() {
                                                     type="text"
                                                     name="card-number"
                                                     id="card-number"
-                                                    placeholder="Card number"
+                                                    placeholder="Numero"
                                                 />
                                             </div>
                                             <div class="flex -space-x-px">
@@ -163,7 +165,7 @@ function Cart() {
                                                     name="postal-code"
                                                     id="postal-code"
                                                     autocomplete="postal-code"
-                                                    placeholder="ZIP/Post Code"
+                                                    placeholder=""
                                                 />
                                             </div>
                                         </div>

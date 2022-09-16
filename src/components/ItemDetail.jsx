@@ -42,10 +42,15 @@ const ItemDetail = ({ item }) => {
                                 <div className="title-product">
                                     <span className="price">${item.price}</span>
                                 </div>
+                                <br />
                                 {
                                     itemCount === 0
                                         ? <ItemCount start={itemCount} stock={5} onAdd={onAdd} />
-                                        : <Link to={`/cart`}><div className="span-cart"><a href="#"></a></div></Link>
+                                        : <div className="box-define">
+                                        <Link to={`/cart`}><button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Ir al Carrito</button></Link>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <Link to={`/`}><button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Seguir Comprando</button></Link>
+                                        </div>
                                 }
                             </div>
                         </div>

@@ -195,6 +195,7 @@ body {
 
 .wsk-cp-text-detail .title-product {
     text-align: center;
+    margin: -6px;
 }
 
 .wsk-cp-text-detail .title-product h3 {
@@ -466,16 +467,17 @@ a.buy-btn:focus {
     transform: translateZ(-25px) rotateX(-90deg);
 }
 
-.span-delete {
+.span-home {
     position: relative;
     display: inline-flex;
-    width: 0px;
+    width: 180px;
     height: 55px;
-    margin: 6px 85px 10px 0px;
+    margin: 10px 15px 10px 35px;
     perspective: 1000px;
 }
 
-.span-delete a {
+.span-home a {
+    font-size: 19px;
     letter-spacing: 1px;
     transform-style: preserve-3d;
     transform: translateZ(-25px);
@@ -484,79 +486,32 @@ a.buy-btn:focus {
 
 }
 
-.span-delete a:before,
-.span-delete a:after {
+.span-home a:before,
+.span-home a:after {
     position: absolute;
-    content: "Eliminar";
+    content: "Seguir Comprando";
     height: 55px;
-    width: 80px;
+    width: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid rgb(246, 104, 104);
+    border: 5px solid black;
     box-sizing: border-box;
     border-radius: 5px;
-    font-size: 15px;
 }
 
-.span-delete a:before {
+.span-home a:before {
     color: #fff;
+    background: #000;
     transform: rotateY(0deg) translateZ(25px);
 }
 
-.span-delete a:after {
-    color: #fff;
+.span-home a:after {
+    color: #000;
     transform: rotateX(90deg) translateZ(25px);
 }
 
-.span-delete a:hover {
-    transform: translateZ(-25px) rotateX(-90deg);
-}
-
-.span-delete-all {
-    position: relative;
-    display: inline-flex;
-    width: 0px;
-    height: 55px;
-    margin: 5px 124px 10px 150px;
-    perspective: 1000px;
-}
-
-.span-delete-all a {
-    letter-spacing: 1px;
-    transform-style: preserve-3d;
-    transform: translateZ(-25px);
-    transition: transform .25s;
-    font-family: 'Montserrat', sans-serif;
-
-}
-
-.span-delete-all a:before,
-.span-delete-all a:after {
-    position: absolute;
-    content: "Eliminar todos los productos";
-    height: 50px;
-    width: 225px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid rgb(246, 104, 104);
-    box-sizing: border-box;
-    border-radius: 5px;
-    font-size: 15px;
-}
-
-.span-delete-all a:before {
-    color: #fff;
-    transform: rotateY(0deg) translateZ(25px);
-}
-
-.span-delete-all a:after {
-    color: #fff;
-    transform: rotateX(90deg) translateZ(25px);
-}
-
-.span-delete-all a:hover {
+.span-home a:hover {
     transform: translateZ(-25px) rotateX(-90deg);
 }
 
@@ -1031,7 +986,7 @@ html {
     font-size: 24px;
     color: #fff;
     text-transform: uppercase;
-    margin: 20px 0;
+    margin: 20px 45px;
 }
 
 .container h2 {
@@ -1119,4 +1074,9 @@ html {
     animation: load 1.2s infinite 0s ease-in-out;
     animation-direction: alternate;
     text-shadow: 0 0 1px #aaa;
+}
+
+.box-define{
+    margin: 0px 0px 0px 170px;
+    --bs-btn-disabled-border-color: #945162;
 }
