@@ -1,10 +1,12 @@
 import "../App.css";
+import "../css/style.css";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 
 function Cart() {
 
-    const itemShow = useContext(CartContext)
+    const itemShow = useContext(CartContext);
+
     return (
         <>
             <section>
@@ -22,8 +24,21 @@ function Cart() {
                                     }
                                 </div>
                                 <div class="mt-8">
-                                    <p class="text-2xl font-medium tracking-tight">$0.00</p>
-                                    <p class="mt-1 text-sm text-gray-500">Detalle</p>
+                                    {(itemShow.cartList.length > 0)
+                                        ? <p class="text-2xm font-medium tracking-tight">$ {itemShow.setSubTotal()} </p>
+                                        : <p class="text-2xm font-medium tracking-tight">$0.00</p>
+                                    }
+                                    <p class="mt-1 text-sm text-gray-500">Subtotal</p>
+                                    {(itemShow.cartList.length > 0)
+                                        ? <p class="text-2xm font-medium tracking-tight">$ {itemShow.setTaxes()} </p>
+                                        : <p class="text-2xm font-medium tracking-tight">$0.00</p>
+                                    }
+                                    <p class="mt-1 text-sm text-gray-500">Impuestos</p>
+                                    {(itemShow.cartList.length > 0)
+                                        ? <p class="text-2xl font-medium tracking-tight">$ {itemShow.setTotal()} </p>
+                                        : <p class="text-2xl font-medium tracking-tight">$0.00</p>
+                                    }
+                                    <p class="mt-1 text-sm text-gray-500">Total</p>
                                 </div>
                                 {itemShow.cartList.map(item =>
                                     <div class="mt-12" src={item.idItem}>
@@ -63,7 +78,7 @@ function Cart() {
                                                         </div>
                                                     </div>
                                                     <div>
-                                                    <button type="button" class="btn btn-danger" onClick={() => itemShow.removeItem(item.idItem)}>Eliminar</button>
+                                                        <button type="button" class="btn btn-danger" onClick={() => itemShow.removeItem(item.idItem)}>Eliminar</button>
                                                     </div>
                                                 </li>
                                             </ul>

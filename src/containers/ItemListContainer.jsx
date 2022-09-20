@@ -12,11 +12,11 @@ function ItemListContainer() {
 
     useEffect(() => {
         if (idCategory) {
-            customFetch(2000, products.filter(item => item.categoryId === parseInt(idCategory)))
+            customFetch(500, products.filter(item => item.categoryId === parseInt(idCategory)))
                 .then(result => setData(result))
                 .catch(err => console.log(err))
         } else {
-            customFetch(2000, products)
+            customFetch(500, products)
                 .then(result => setData(result))
                 .catch(err => console.log(err))
         }
