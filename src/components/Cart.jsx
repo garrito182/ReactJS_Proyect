@@ -143,7 +143,7 @@ function Cart() {
                                                     type="text"
                                                     name="card-number"
                                                     id="card-number"
-                                                    placeholder="Numero"
+                                                    placeholder="Nº de Tarjeta"
                                                 />
                                             </div>
                                             <div class="flex -space-x-px">
