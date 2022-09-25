@@ -257,9 +257,6 @@ body {
     margin: 5px 0px 10px 95px;
 }
 
-
-.card-footer {}
-
 .card-footer:after,
 .card-footer:before {
     content: '';

@@ -1,4 +1,5 @@
 import "../css/style.css";
+import React from "react";
 import { Link } from "react-router-dom";
 
 export const Item = ({ id, picture, brand, model, price }) => {

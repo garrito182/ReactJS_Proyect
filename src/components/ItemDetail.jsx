@@ -1,9 +1,9 @@
-import { useState, useContext } from "react";
 import "../css/style.css";
-import { ItemCount } from "./ItemCount";
-import Loader from "./Loader";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom"; 
+import { ItemCount } from "./ItemCount";
 import { CartContext } from "./CartContext";
+import Loader from "./Loader";
 
 const ItemDetail = ({ item }) => {
 

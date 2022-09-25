@@ -1,9 +1,8 @@
 import "../css/style.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"
+import { firestoreFetch } from "../utilities/firebaseFetch";
 import ItemList from "../components/ItemList";
-import customFetch from "../utilities/CustomFetch";
-import products from "../utilities/Products";
 
 function ItemListContainer() {
 
@@ -11,15 +10,9 @@ function ItemListContainer() {
     const { idCategory } = useParams();
 
     useEffect(() => {
-        if (idCategory) {
-            customFetch(500, products.filter(item => item.categoryId === parseInt(idCategory)))
-                .then(result => setData(result))
-                .catch(err => console.log(err))
-        } else {
-            customFetch(500, products)
-                .then(result => setData(result))
-                .catch(err => console.log(err))
-        }
+        firestoreFetch(idCategory)
+            .then(result => setData(result))
+            .catch(err => console.log(err));
     }, [idCategory]);
 
     return (

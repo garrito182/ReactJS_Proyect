@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import ItemListContainer from './containers/ItemListContainer.jsx';
@@ -13,9 +14,9 @@ function App() {
     <CartContextProvider>
       <BrowserRouter>
         <NavBar />
-        <div class="shell">
-          <div class="container">
-            <div class="row">
+        <div className="shell">
+          <div className="container">
+            <div className="row">
               <Routes>
                 <Route path="/" element={<ItemListContainer />} />
                 <Route path="/category/:idCategory" element={<ItemListContainer />} />
