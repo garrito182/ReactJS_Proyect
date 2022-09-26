@@ -6,7 +6,7 @@ export const firestoreFetch = async (idCategory) => {
 
     let qry;
     if (idCategory) {
-        qry = query(collection(db, "products".filter(where("categoryId", '==', idCategory))));
+        qry = query(collection(db, "products"), where("categoryId", '==', parseInt(idCategory)));
     } else {
         qry = query(collection(db, "products"), orderBy("id"));
     }
