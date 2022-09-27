@@ -512,6 +512,54 @@ a.buy-btn:focus {
     transform: translateZ(-25px) rotateX(-90deg);
 }
 
+.span-order {
+    position: relative;
+    display: inline-flex;
+    width: 180px;
+    height: 55px;
+    margin: 10px 15px 10px 35px;
+    perspective: 1000px;
+}
+
+.span-order a {
+    font-size: 19px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.span-order a:before,
+.span-order a:after {
+    position: absolute;
+    content: "Pagar";
+    height: 55px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.span-order a:before {
+    color: #fff;
+    background: #000;
+    transform: rotateY(0deg) translateZ(25px);
+}
+
+.span-order a:after {
+    color: #000;
+    transform: rotateX(90deg) translateZ(25px);
+}
+
+.span-order a:hover {
+    transform: translateZ(-25px) rotateX(-90deg);
+}
+
 /* Reset */
 * {
     margin: 0;

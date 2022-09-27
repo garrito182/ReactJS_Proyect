@@ -1,11 +1,50 @@
 import "../App.css";
 import "../css/style.css";
+import { db } from "../utilities/firebaseConfig";
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
+import { doc, setDoc, serverTimestamp, collection, updateDoc, increment } from "firebase/firestore";
 
 function Cart() {
 
     const itemShow = useContext(CartContext);
+
+    const newOrder = async () => {
+        let itemsForDB = itemShow.cartList.map(item => ({
+            id: item.idItem,
+            brand: item.brandItem,
+            price: item.priceItem,
+            quantity: item.countItem,
+        }));
+
+        let order = {
+            buyer:
+            {
+                name: "Leo Messi",
+                email: "leomessi@gmail.com",
+                phone: "54 11 0000 0000"
+            },
+            date: serverTimestamp(),
+            items: itemsForDB,
+            total: itemShow.setTotal()
+        }
+
+        console.log(order);
+        const newOrderRef = doc(collection(db, "orders"));
+        await setDoc(newOrderRef, order);
+        alert("Su orden fue creada exitosamente!\n #" + newOrderRef.id)
+        window.location.href = "/order"
+
+        itemShow.clearAll();
+
+        itemsForDB.map(async (item) => {
+            const itemRef = doc(db, "products", item.id);
+            await updateDoc(itemRef, {
+                stock: increment(-item.quantity)
+            });
+        })
+    }
 
     return (
         <>
@@ -41,7 +80,7 @@ function Cart() {
                                     <p className="mt-1 text-sm text-gray-500">Total</p>
                                 </div>
                                 {itemShow.cartList.map(item =>
-                                    <div className="mt-12" src={item.idItem}>
+                                    <div className="mt-12" key={item.idItem}>
                                         <div className="flow-root">
                                             <ul className="-my-4 divide-y divide-gray-200">
                                                 <li className="flex items-center justify-between py-4">
@@ -183,18 +222,16 @@ function Cart() {
                                                     type="text"
                                                     name="postal-code"
                                                     id="postal-code"
-                                                    autocomplete="postal-code"
+                                                    autoComplete="postal-code"
                                                     placeholder=""
                                                 />
                                             </div>
                                         </div>
                                     </fieldset>
                                     <div className="col-span-6">
-                                        <button
-                                            className="rounded-lg bg-black text-sm p-2.5 text-white w-full block"
-                                            type="submit">
-                                            Pagar
-                                        </button>
+                                        <div className="span-order">
+                                                <a onClick={newOrder} href="#"></a>
+                                        </div>
                                     </div>
                                 </form>
                             </div>

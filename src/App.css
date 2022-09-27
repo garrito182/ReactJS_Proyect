@@ -855,3 +855,15 @@ video {
   color: #fff;
   background-color: #111827;
 }
+
+.b, strong {
+  font-size: 50px;
+}
+
+.mt-4, b, strong {
+  color:#fff8e1
+}
+
+.mt-8 {
+  margin-top: 6.2rem;
+}

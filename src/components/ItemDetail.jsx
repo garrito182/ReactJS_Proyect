@@ -47,9 +47,9 @@ const ItemDetail = ({ item }) => {
                                     itemCount === 0
                                         ? <ItemCount start={itemCount} stock={5} onAdd={onAdd} />
                                         : <div className="box-define">
-                                        <Link to={`/cart`}><button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Ir al Carrito</button></Link>
+                                        <Link to={`/cart`}><button type="button" className="btn btn-light" data-mdb-ripple-color="dark">Ir al Carrito</button></Link>
                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <Link to={`/`}><button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Seguir Comprando</button></Link>
+                                        <Link to={`/`}><button type="button" className="btn btn-light" data-mdb-ripple-color="dark">Seguir Comprando</button></Link>
                                         </div>
                                 }
                             </div>
