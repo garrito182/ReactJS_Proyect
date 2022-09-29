@@ -2,7 +2,6 @@ import "../App.css";
 import "../css/style.css";
 import { db } from "../utilities/firebaseConfig";
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 import { doc, setDoc, serverTimestamp, collection, updateDoc, increment } from "firebase/firestore";
 
