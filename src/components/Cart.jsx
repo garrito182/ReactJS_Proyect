@@ -2,6 +2,7 @@ import "../App.css";
 import "../css/style.css";
 import { db } from "../utilities/firebaseConfig";
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 import { doc, setDoc, serverTimestamp, collection, updateDoc, increment } from "firebase/firestore";
 
@@ -134,7 +135,7 @@ function Cart() {
                                             Nombre
                                         </label>
                                         <input
-                                            className="rounded-lg shadow-sm border-gray-200 w-full text-sm p-2.5"
+                                            className="rounded-lg shadow-sm border-gray-200 w-fulll text-sm p-2.5"
                                             type="text"
                                             id="frst_name"
                                         />
@@ -144,7 +145,7 @@ function Cart() {
                                             Apellido
                                         </label>
                                         <input
-                                            className="rounded-lg shadow-sm border-gray-200 w-full text-sm p-2.5"
+                                            className="rounded-lg shadow-sm border-gray-200 w-fulll text-sm p-2.5"
                                             type="text"
                                             id="last_name"
                                         />
@@ -154,7 +155,7 @@ function Cart() {
                                             E-mail
                                         </label>
                                         <input
-                                            className="rounded-lg shadow-sm border-gray-200 w-full text-sm p-2.5"
+                                            className="rounded-lg shadow-sm border-gray-200 w-fulll text-sm p-2.5"
                                             type="email"
                                             id="email"
                                         />
@@ -164,7 +165,7 @@ function Cart() {
                                             Telefono
                                         </label>
                                         <input
-                                            className="rounded-lg shadow-sm border-gray-200 w-full text-sm p-2.5"
+                                            className="rounded-lg shadow-sm border-gray-200 w-fulll text-sm p-2.5"
                                             type="tel"
                                             id="phone"
                                         />
@@ -190,7 +191,7 @@ function Cart() {
                                                         Fecha de Vencimiento
                                                     </label>
                                                     <input
-                                                        className="border-gray-200 rounded-bl-lg w-full focus:z-10 text-sm p-2.5 placeholder-gray-400"
+                                                        className="border-gray-200 rounded-bl-lg w-fulll focus:z-10 text-sm p-2.5 placeholder-gray-400"
                                                         type="text"
                                                         name="card-expiration-date"
                                                         id="card-expiration-date"
@@ -200,7 +201,7 @@ function Cart() {
                                                 <div className="flex-1">
                                                     <label className="sr-only" for="card-cvc">CVC</label>
                                                     <input
-                                                        className="border-gray-200 rounded-br-lg w-full focus:z-10 text-sm p-2.5 placeholder-gray-400"
+                                                        className="border-gray-200 rounded-br-lg w-fulll focus:z-10 text-sm p-2.5 placeholder-gray-400"
                                                         type="text"
                                                         name="card-cvc"
                                                         id="card-cvc"
@@ -229,7 +230,7 @@ function Cart() {
                                     </fieldset>
                                     <div className="col-span-6">
                                         <div className="span-order">
-                                                <a onClick={newOrder} href="#"></a>
+                                            <a onClick={newOrder} href="#"></a>
                                         </div>
                                     </div>
                                 </form>
