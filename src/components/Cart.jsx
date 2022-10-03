@@ -47,8 +47,8 @@ function Cart() {
     }
 
     return (
-        <>
-            <section>
+        <>{(itemShow.cartList.length > 0)
+            ? <section>
                 <h1 className="sr-only">Checkout</h1>
                 <div className="relative mx-auto max-w-screen-2xl">
                     <div className="grid grid-cols-1 md:grid-cols-2">
@@ -239,6 +239,24 @@ function Cart() {
                     </div>
                 </div>
             </section>
+            : <section class="bg-gray-50">
+                <div
+                    class="max-w-screen-xl px-4 py-32 mx-auto lg:h-screen lg:items-center lg:flex">
+                    <div class="max-w-xl mx-auto text-center">
+                        <p class="mt-4 sm:leading-relaxed sm:text-xl">
+                            Su carrito esta vacio...
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-4 mt-8">
+                            <Link to="/">
+                                <button class="block mt-4 w-full px-12 py-3 text-sm font-medium text-red-600 rounded shadow sm:w-auto hover:text-red-700 active:text-red-500 focus:outline-none focus:ring">
+                                    Volver al inicio
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        }
         </>
     );
 }
